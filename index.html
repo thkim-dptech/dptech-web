@@ -43,13 +43,7 @@
             align-items: center;
         }
 
-        .logo-img {
-            max-height: 100%;
-            width: auto;
-            display: block;
-        }
-
-        /* 실제 로고 형상을 정밀하게 재현한 SVG 백업 스타일 */
+        /* 로고 형상 정밀 재현 스타일 */
         .logo-fallback {
             display: none;
             align-items: flex-start;
@@ -75,23 +69,19 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center">
                     <a href="#home" class="logo-container">
-                        <!-- 실제 로고 파일 로드 시도 -->
-                        <img src="logo.png" alt="DP TECH" class="logo-img" id="nav-logo" onerror="handleLogoError(this)">
+                        <img src="logo.png" alt="DP TECH" class="h-full w-auto block" id="nav-logo" onerror="handleLogoError(this)">
                         
-                        <!-- 정밀 보정된 헤더 로고 백업 (D 상단 일치 + 슬로건 폭 맞춤) -->
                         <div id="logo-fallback-ui" class="logo-fallback">
                             <div class="flex items-start">
-                                <!-- 로고 심볼 -->
                                 <div class="relative mr-2 flex-shrink-0" style="width: 44px; height: 50px;">
                                     <svg width="44" height="50" viewBox="0 0 55 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 0H32C42 0 50 8 50 18.5C50 29 42 37 32 37H12V0Z" fill="#3B82F6"/>
                                         <circle cx="19" cy="47" r="7" fill="#22C55E"/>
                                     </svg>
                                 </div>
-                                <!-- 로고 텍스트 및 슬로건 -->
-                                <div class="flex flex-col" style="width: 154px;"> 
+                                <div class="flex flex-col w-fit min-w-[154px]"> 
                                     <span class="text-[38px] font-black text-[#3B82F6] font-inter tracking-tighter leading-[0.78] uppercase block">DP TECH</span>
-                                    <div class="flex justify-between text-[7.5px] font-bold text-black uppercase mt-1 w-full">
+                                    <div class="flex justify-between text-[7.2px] font-bold text-black uppercase mt-1 w-full">
                                         <span>DESIGN</span>
                                         <span>PRODUCT</span>
                                         <span>/</span>
@@ -104,7 +94,6 @@
                     </a>
                 </div>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-10 items-center font-medium">
                     <a href="#home" class="text-slate-600 hover:text-blue-600 transition-colors text-sm">홈</a>
                     <a href="#about" class="text-slate-600 hover:text-blue-600 transition-colors text-sm">기업소개</a>
@@ -113,7 +102,6 @@
                     <a href="#contact" class="text-slate-600 hover:text-blue-600 transition-colors text-sm">문의하기</a>
                 </div>
 
-                <!-- Mobile Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-slate-600 p-2">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
@@ -122,7 +110,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-6 space-y-4 shadow-2xl">
             <a href="#home" class="block text-lg font-bold text-slate-800">홈</a>
             <a href="#about" class="block text-lg font-bold text-slate-800">기업소개</a>
@@ -176,23 +163,22 @@
                     디피테크(DP TECH)는 공기/가스 압축기 및 각종 기계장비의 개념 설계부터 시제품 제작, 기술 문서 대응까지 전 과정을 지원하는 엔지니어링 전문 기업입니다.
                 </p>
                 
-                <!-- 핵심 경쟁력 요약 -->
-                <div class="p-10 bg-blue-50 rounded-3xl border border-blue-100/50 shadow-sm">
+                <div class="p-10 bg-blue-50 rounded-3xl border border-blue-100/50 shadow-sm text-center">
                     <h4 class="font-bold text-blue-900 mb-8 flex items-center justify-center gap-2 text-xl">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.827a1 1 0 00-.788 0l-7 3a1 1 0 000 1.846l7 3a1 1 0 00.788 0l7-3a1 1 0 000-1.846l-7-3zM3.108 8.175l6.504 2.787a1 1 0 00.776 0l6.504-2.787L14.4 9.223l-4.006 1.717a1 1 0 01-.788 0L5.6 9.223l-2.492-1.048zM10 12.112l-6.504-2.787-1.104.473a1 1 0 000 1.846l7 3a1 1 0 00.788 0l7-3a1 1 0 000-1.846l-1.104-.473L10 12.112z"/></svg>
                         핵심 경쟁력
                     </h4>
-                    <div class="grid md:grid-cols-3 gap-8 text-center">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 bg-blue-600 rounded-full mb-4"></div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <div class="w-3 h-3 bg-blue-600 rounded-full mx-auto mb-4"></div>
                             <p class="text-slate-700 font-medium leading-relaxed">국내외 대형 프로젝트 수행<br>노하우 및 실무 경력</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 bg-blue-600 rounded-full mb-4"></div>
+                        <div>
+                            <div class="w-3 h-3 bg-blue-600 rounded-full mx-auto mb-4"></div>
                             <p class="text-slate-700 font-medium leading-relaxed">2D/3D 정밀 설계 및<br>Solidworks 기반 모델링 최적화</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 bg-blue-600 rounded-full mb-4"></div>
+                        <div>
+                            <div class="w-3 h-3 bg-blue-600 rounded-full mx-auto mb-4"></div>
                             <p class="text-slate-700 font-medium leading-relaxed">국가 연구과제 책임자 역임을<br>통한 검증된 기술 신뢰도</p>
                         </div>
                     </div>
@@ -219,7 +205,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Achievement 1 -->
                 <div class="milestone-card p-8 bg-white rounded-3xl shadow-sm reveal">
                     <div class="flex justify-between items-center mb-6">
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-bold font-inter tracking-widest uppercase">Latest</span>
@@ -229,7 +214,6 @@
                     <p class="text-slate-500 text-xs leading-relaxed">해상용 Main Air Compressor 실린더 윤활유 공급 확인 핵심 기술 장치 개발.</p>
                 </div>
                 
-                <!-- Achievement 2 -->
                 <div class="milestone-card p-8 bg-white rounded-3xl shadow-sm reveal" style="transition-delay: 100ms;">
                     <div class="flex justify-between items-center mb-6">
                         <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-bold font-inter tracking-widest uppercase">Energy</span>
@@ -239,7 +223,6 @@
                     <p class="text-slate-500 text-xs leading-relaxed">극저온 350bar 급 500kg/hr 왕복동 Oil Free 압축기 기술 상용화 지원.</p>
                 </div>
                 
-                <!-- Achievement 3 -->
                 <div class="milestone-card p-8 bg-white rounded-3xl shadow-sm reveal" style="transition-delay: 200ms;">
                     <div class="flex justify-between items-center mb-6">
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-bold font-inter tracking-widest uppercase">Hydrogen</span>
@@ -249,7 +232,6 @@
                     <p class="text-slate-500 text-xs leading-relaxed">Oil-Free 120bar 급 수소 부스터 압축기 개발 및 차세대 에너지 원천 기술 확보.</p>
                 </div>
 
-                <!-- Achievement 4 -->
                 <div class="milestone-card p-8 bg-white rounded-3xl shadow-sm reveal" style="transition-delay: 300ms;">
                     <div class="flex justify-between items-center mb-6">
                         <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-bold font-inter tracking-widest uppercase">Offshore</span>
@@ -276,7 +258,6 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Capability 1 -->
                 <div class="p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all reveal">
                     <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
@@ -284,7 +265,6 @@
                     <h4 class="font-bold text-lg mb-3">제품 설계 및 초도품 개발</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">개념 설계부터 시제품 제작까지 전 단계 기술 지원 및 최적화 솔루션 제공.</p>
                 </div>
-                <!-- Capability 2 -->
                 <div class="p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all reveal" style="transition-delay: 100ms;">
                     <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -292,7 +272,6 @@
                     <h4 class="font-bold text-lg mb-3">고객 문서 대응 및 시방 작성</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">대형 조선소 및 선주사의 요구사항을 충족하는 정밀한 기술 문서 패키지 제작.</p>
                 </div>
-                <!-- Capability 3 -->
                 <div class="p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all reveal" style="transition-delay: 200ms;">
                     <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
@@ -300,7 +279,6 @@
                     <h4 class="font-bold text-lg mb-3">2D/3D 도면 작성 지원</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">Solidworks 등 최신 툴을 이용한 부품 공차 분석 및 어셈블리 모델링.</p>
                 </div>
-                <!-- Capability 4 -->
                 <div class="p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all reveal" style="transition-delay: 300ms;">
                     <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -342,17 +320,30 @@
                     </div>
                 </div>
                 
-                <div class="reveal">
-                    <form onsubmit="return false;" class="bg-white rounded-[40px] p-10 md:p-12 shadow-2xl space-y-6">
+                <div class="reveal relative">
+                    <form id="contact-form" class="bg-white rounded-[40px] p-10 md:p-12 shadow-2xl space-y-6 transition-all duration-500">
                         <h4 class="text-2xl font-bold text-slate-900 mb-8">기술 상담 및 의뢰</h4>
                         <div class="grid md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="담당자명" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
-                            <input type="text" placeholder="연락처" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
+                            <input type="text" id="user-name" placeholder="담당자명" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
+                            <input type="text" id="user-contact" placeholder="연락처" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
                         </div>
-                        <input type="email" placeholder="이메일 주소" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
-                        <textarea rows="4" placeholder="문의 내용 (제품 설계, 기술 지원 등)" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20"></textarea>
-                        <button class="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-xl shadow-blue-500/30 transition-all text-lg">메시지 보내기</button>
+                        <input type="email" id="user-email" placeholder="이메일 주소" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20">
+                        <textarea id="user-message" rows="4" placeholder="문의 내용 (제품 설계, 기술 지원 등)" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600/20"></textarea>
+                        <button type="submit" class="w-full py-5 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-xl shadow-blue-500/30 transition-all text-lg flex items-center justify-center">
+                            <span id="btn-text">메시지 보내기</span>
+                            <div id="btn-loader" class="hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white ml-3"></div>
+                        </button>
                     </form>
+                    
+                    <!-- 성공 메시지 레이어 (기본 숨김) -->
+                    <div id="success-msg" class="hidden absolute inset-0 bg-white rounded-[40px] flex flex-col items-center justify-center text-center p-10 z-20 shadow-2xl border-2 border-blue-100">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">문의가 접수되었습니다</h4>
+                        <p class="text-slate-500 mb-8">기입하신 연락처로 담당 엔지니어가<br>빠른 시일 내에 답변 드리겠습니다.</p>
+                        <button onclick="resetContactForm()" class="px-8 py-3 border border-slate-200 rounded-xl text-slate-600 font-bold hover:bg-slate-50 transition-all">새 문의 작성</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -364,19 +355,15 @@
             <div class="flex flex-col md:flex-row justify-between items-start mb-16">
                 <div class="mb-10 md:mb-0">
                     <div class="flex items-center gap-2 mb-6">
-                        <!-- 푸터 로고: 상단 로고와 정렬 및 색상 로직 동일 적용 -->
-                        <img src="logo.png" alt="DP TECH" class="h-12 brightness-0 invert opacity-90" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        
-                        <!-- 푸터 정밀 백업 로고 (D 파란색 적용 + 폭 맞춤 슬로건) -->
-                        <div class="hidden items-start">
-                            <div class="relative mr-2 flex-shrink-0" style="width: 38px; height: 42px;">
-                                <svg width="38" height="42" viewBox="0 0 55 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="flex items-start">
+                            <div class="relative mr-2 flex-shrink-0" style="width: 42px; height: 48px;">
+                                <svg width="42" height="48" viewBox="0 0 55 65" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 0H32C42 0 50 8 50 18.5C50 29 42 37 32 37H12V0Z" fill="#3B82F6"/>
                                     <circle cx="19" cy="47" r="7" fill="#22C55E"/>
                                 </svg>
                             </div>
-                            <div class="flex flex-col" style="width: 130px;">
-                                <span class="text-[32px] font-black text-white font-inter tracking-tighter leading-[0.78] uppercase">DP TECH</span>
+                            <div class="flex flex-col w-fit min-w-[135px]">
+                                <span class="text-[34px] font-black text-white font-inter tracking-tighter leading-[0.78] uppercase">DP TECH</span>
                                 <div class="flex justify-between text-[6.5px] font-bold text-slate-400 uppercase mt-1 w-full">
                                     <span>DESIGN</span>
                                     <span>PRODUCT</span>
@@ -387,7 +374,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-slate-500 max-w-sm text-sm">Specialist in Design & Development of Air/Gas Compressors.<br>Design Product / Development Prototype.</p>
+                    <p class="text-slate-500 max-w-sm text-sm mt-4">Specialist in Design & Development of Air/Gas Compressors.<br>Design Product / Development Prototype.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -422,6 +409,39 @@
             }
         }
 
+        // 폼 제출 핸들러
+        const contactForm = document.getElementById('contact-form');
+        const successMsg = document.getElementById('success-msg');
+        const btnText = document.getElementById('btn-text');
+        const btnLoader = document.getElementById('btn-loader');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 전송 중 UI 효과
+                btnText.textContent = '전송 중...';
+                btnLoader.classList.remove('hidden');
+                
+                // 실제 서버 연동 대신 시뮬레이션 (1.5초 후 완료)
+                setTimeout(() => {
+                    contactForm.classList.add('opacity-0', 'pointer-events-none');
+                    successMsg.classList.remove('hidden');
+                    successMsg.classList.add('animate-in', 'fade-in', 'zoom-in', 'duration-500');
+                    
+                    // 폼 초기화
+                    contactForm.reset();
+                    btnText.textContent = '메시지 보내기';
+                    btnLoader.classList.add('hidden');
+                }, 1500);
+            });
+        }
+
+        function resetContactForm() {
+            successMsg.classList.add('hidden');
+            contactForm.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
         // 모바일 메뉴 제어
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -452,17 +472,14 @@
             }
         }
         
-        // 페이지 로드 시 초기 실행
         window.onload = () => {
             reveal();
-            // 로고 이미지 로드 여부를 확인하여 백업 표시 결정
             const logoImg = document.getElementById('nav-logo');
-            if (!logoImg.complete || logoImg.naturalWidth === 0) {
+            if (logoImg && (!logoImg.complete || logoImg.naturalWidth === 0)) {
                 handleLogoError(logoImg);
             }
         };
 
-        // 모바일 메뉴 클릭 시 자동 닫기
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
