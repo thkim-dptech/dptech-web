@@ -1,9 +1,8 @@
-const CACHE_NAME = 'dptech-cache-v4';
+const CACHE_NAME = 'dptech-cache-v5';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
-  // 여기에 아이콘 파일들도 추가하는 것이 좋습니다.
   './icon-192x192.png',
   './icon-512x512.png'
 ];
@@ -13,8 +12,10 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('캐시 오픈 및 리소스 저장 중');
-        return cache.addAll(urlsToCache);
+        console.log('캐시 오픈 중...');
+        return cache.addAll(urlsToCache)
+          .then(() => console.log('모든 리소스 캐싱 완료 (안드로이드 설치 준비 완료)'))
+          .catch(err => console.error('캐싱 실패! 아이콘 파일이 서버에 있는지 확인하세요:', err));
       })
   );
   self.skipWaiting();
@@ -42,12 +43,8 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
-        // 캐시에 있으면 반환, 없으면 네트워크에서 가져오고 캐시에 저장(선택적)
-        return response || fetch(event.request).then((fetchResponse) => {
-          return fetchResponse;
-        });
+        return response || fetch(event.request);
       }).catch(() => {
-        // 네트워크 연결이 끊겼을 때의 예외 처리
         return caches.match('./index.html');
       })
   );
