@@ -3,7 +3,7 @@
   "short_name": "DPTECH",
   "description": "기계장비 및 압축기 설계 전문 엔지니어링",
   "start_url": "./index.html",
-  "id": "./index.html",
+  "id": "dptech-pwa",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
@@ -26,6 +26,22 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "디피테크 모바일 화면"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "디피테크 데스크탑 화면"
     }
   ]
 }
