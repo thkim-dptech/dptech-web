@@ -1,21 +1,24 @@
 {
-  "name": "DP TECH",
-  "short_name": "DPTECH",
-  "description": "Design Product Development Prototype",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0056b3",
-  "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+"name": "디피테크 (DP TECH)",
+"short_name": "DPTECH",
+"description": "기계장비 및 압축기 설계 전문 엔지니어링",
+"start_url": "./index.html",
+"display": "standalone",
+"orientation": "portrait",
+"background_color": "#ffffff",
+"theme_color": "#3B82F6",
+"icons": [
+{
+"src": "icon-192x192.png",
+"sizes": "192x192",
+"type": "image/png",
+"purpose": "any maskable"
+},
+{
+"src": "icon-512x512.png",
+"sizes": "512x512",
+"type": "image/png",
+"purpose": "any maskable"
+}
+]
 }
